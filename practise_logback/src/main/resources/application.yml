@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/practise_basic?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.entity.**.entity
+  # classpath* 用于加载类路径（包括jar包）中的所有匹配的资源,扫描项目包下所有xml, 而非resource下
+  # mapper-locations: classpath*:cn/**/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      glmapper:
+        spring:
+          boot: INFO
+  file:
+   path: D:\logs

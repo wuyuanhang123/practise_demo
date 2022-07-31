@@ -1,0 +1,4 @@
+2022-06-03 18:06:59.874 [main] INFO  com.example.user.logServiceTest - Starting logServiceTest using Java 11.0.5 on DESKTOP-4CSFS5I with PID 5652 (started by wyh in D:\demo\practise_logback)
+2022-06-03 18:06:59.875 [main] INFO  com.example.user.logServiceTest - No active profile set, falling back to 1 default profile: "default"
+2022-06-03 18:07:01.354 [main] INFO  com.example.user.logServiceTest - Started logServiceTest in 1.912 seconds (JVM running for 2.754)
+2022-06-03 18:07:01.639 [main] INFO  com.example.user.service.logService - 测试

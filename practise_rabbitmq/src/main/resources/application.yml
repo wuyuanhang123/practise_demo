@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: springboot_rabbitmq
+  rabbitmq:
+    host: 127.0.0.1
+    virtual-host: /
+    username: admin
+    password: 123456
+    port: 5672
+    #打开消息确认机制
+    publisher-confirm-type: correlated
+    #打开消息返回
+    publisher-returns: true
+    #消费者可靠性设置
+    listener:
+      simple:
+        retry:
+          #最大重试次数
+          max-attempts: 5
+          #是否开启消费者重试
+          enabled: true
+          #重试间隔时间
+          initial-interval: 5000
+          #重试超过最大次数后是否拒绝
+        default-requeue-rejected: false
+        #ACK模式
+        acknowledge-mode: manual
+    #设置消息投递失败策略
+    template:
+      mandatory: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/practise_basic?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.entity.**.entity
+  # classpath* 用于加载类路径（包括jar包）中的所有匹配的资源,扫描项目包下所有xml, 而非resource下
+  # mapper-locations: classpath*:cn/**/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
